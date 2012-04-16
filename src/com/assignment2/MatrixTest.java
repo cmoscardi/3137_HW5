@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 
 public class MatrixTest {
 	public static HashTable table;
+	public static JFrame window;
 	public static void main(String[] args) throws Exception{
 		Node[] nodes = new Node[18];
 		File matrix = new File("graph.txt");
@@ -51,12 +52,11 @@ public class MatrixTest {
 		makeTable(table);
 		
 		
-		JFrame window = new JFrame();
+		window = new JFrame();
 		window.setSize(400, 400);
 		JComponent p = new MatrixPane(nodes,800,600);
 		window.add(p);
-		window.setVisible(true);
-		//runSearch(nodes);
+		//runSearch(nodes,window);
 	}
 	
 	public static void convert(Node[] nodes){
@@ -82,9 +82,10 @@ public class MatrixTest {
 		}
 	}
 	
-	public static void runSearch(Node[] nodes){
+	public static void runSearch(Node[] nodes,JFrame window){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Length of word?");
+		window.setVisible(true);
 		int number = Integer.parseInt(input.nextLine());
 		
 		//each node can be a starting letter
@@ -95,6 +96,12 @@ public class MatrixTest {
 	
 	public static void recurse(Node node, String s,int depth){
 		String t = s+Character.toString(node.letter);
+		try{
+			Thread.sleep(500);
+		}
+		catch(Exception e){
+			
+		}
 		if(depth==0){
 			if(table.lookup(t)){
 				System.out.println(t);
