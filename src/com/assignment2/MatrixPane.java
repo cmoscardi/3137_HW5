@@ -33,6 +33,7 @@ public class MatrixPane extends JComponent{
 				g2.setColor(Color.RED);
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY() +3);
 				cats[i]=cat;
+				n.circle=cat;
 			}
 			else{
 				Ellipse2D cat = new Ellipse2D.Double(80+n.x*(height/6),30+n.y*(height/6) , 20, 20);
@@ -40,6 +41,7 @@ public class MatrixPane extends JComponent{
 				g2.setColor(Color.RED);
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY()+3);
 				cats[i]=cat;
+				n.circle=cat;
 			}
 			i++;
 			g2.setColor(Color.BLACK);
