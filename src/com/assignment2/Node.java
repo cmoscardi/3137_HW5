@@ -1,9 +1,7 @@
 package com.assignment2;
 
-import java.awt.geom.Ellipse2D;
 
 public class Node {
-	Ellipse2D circle;
 	int x;
 	int y;
 	int z;

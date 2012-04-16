@@ -1,12 +1,14 @@
 package com.assignment2;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
 import javax.swing.JComponent;
 
+@SuppressWarnings("serial")
 public class MatrixPane extends JComponent{
 	Node[] matrix;
 	int width;
@@ -26,21 +28,22 @@ public class MatrixPane extends JComponent{
 		int i=0;
 		for(Node n:matrix){
 			String letter = Character.toString(n.letter);
-	
+			Font f = new Font("Times new Roman",Font.BOLD,15);
+			g2.setFont(f);
 			if(n.z==0){
-				Ellipse2D cat = new Ellipse2D.Double(40+n.x*(height/6),60+n.y*(height/6) , 20, 20);
+				Ellipse2D cat = new Ellipse2D.Double(40+n.x*(height/5),60+n.y*(height/5) , 30, 30);
 				if(n.red){
 					g2.setColor(Color.RED);
 					g2.fill(cat);
 				}
 				g2.draw(cat);
 				g2.setColor(Color.BLUE);
+
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY() +3);
 				cats[i]=cat;
-				n.circle=cat;
 			}
 			else{
-				Ellipse2D cat = new Ellipse2D.Double(80+n.x*(height/6),30+n.y*(height/6) , 20, 20);
+				Ellipse2D cat = new Ellipse2D.Double(80+n.x*(height/5),30+n.y*(height/5) , 30, 30);
 				if(n.red){
 					g2.setColor(Color.RED);
 					g2.fill(cat);
@@ -49,7 +52,6 @@ public class MatrixPane extends JComponent{
 				g2.setColor(Color.BLUE);
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY()+3);
 				cats[i]=cat;
-				n.circle=cat;
 			}
 			i++;
 			g2.setColor(Color.BLACK);

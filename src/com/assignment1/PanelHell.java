@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+@SuppressWarnings("serial")
 public class PanelHell extends JPanel{
 	private Graph graph;
 	private int height;
