@@ -12,6 +12,7 @@ public class Node {
 	int adjCount;
 	int adjNodeCount;
 	int[][] adjCoords;
+	boolean red;
 	public Node(){
 		adjacents = new Node[5];
 		adjCoords= new int[5][3];

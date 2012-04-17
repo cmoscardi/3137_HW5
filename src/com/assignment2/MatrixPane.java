@@ -29,16 +29,24 @@ public class MatrixPane extends JComponent{
 	
 			if(n.z==0){
 				Ellipse2D cat = new Ellipse2D.Double(40+n.x*(height/6),60+n.y*(height/6) , 20, 20);
+				if(n.red){
+					g2.setColor(Color.RED);
+					g2.fill(cat);
+				}
 				g2.draw(cat);
-				g2.setColor(Color.RED);
+				g2.setColor(Color.BLUE);
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY() +3);
 				cats[i]=cat;
 				n.circle=cat;
 			}
 			else{
 				Ellipse2D cat = new Ellipse2D.Double(80+n.x*(height/6),30+n.y*(height/6) , 20, 20);
+				if(n.red){
+					g2.setColor(Color.RED);
+					g2.fill(cat);
+				}
 				g2.draw(cat);
-				g2.setColor(Color.RED);
+				g2.setColor(Color.BLUE);
 				g2.drawString(letter,(int) cat.getCenterX()-3 , (int) cat.getCenterY()+3);
 				cats[i]=cat;
 				n.circle=cat;
